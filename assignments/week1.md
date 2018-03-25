@@ -1,4 +1,4 @@
-# week1
+# Week1
 
 ## 任务分配
 
@@ -6,8 +6,8 @@
 
 [看板](https://tower.im/projects/af4ce6bbfe2e4cac9201496f80d949c3/)
 
-|assignment| menber|
-|:-:|:-:|
+|Assignment| Member|
+|:-|:-|
 |About（项目规划）|Jason|
 |Team profile（团队组建）|Qubic|
 |Investigation（项目前期调研）|Qubic|

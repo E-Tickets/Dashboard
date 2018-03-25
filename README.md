@@ -6,7 +6,7 @@
 
 ### Investigation
 
-
+[相关调查结果](doc/Investigation.md)
 
 ### Vision
 

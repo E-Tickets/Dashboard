@@ -58,7 +58,7 @@
 
 ## API Doc
 
-[API 文档](doc/Etickets-api.apib)
+[API 文档](https://e-tickets.github.io/Dashboard/api/api.html)
 
 ---
 

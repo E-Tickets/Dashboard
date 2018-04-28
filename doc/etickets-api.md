@@ -1,4 +1,4 @@
-HOST: http://172.18.158.240:8000
+HOST: http://172.18.157.240:8000
 
 # E-Tickets
 
@@ -90,9 +90,42 @@ E-Tickets API 文档
     }
 
 
-## Session [/api/session]
+## Admin [/api/admin]
 
-### Login [POST]
+### Admin Reginter [POST]
+
+* Request (application/json)
+    {
+        "username": "admin",
+        "password": "admin",
+    }
+
+* Response 200 (application/json)
+    {
+        "status": "OK",
+        "message": "Admin register successfully.",
+        "data": {
+            "admin_username": "admin",
+        }
+    }
+
+* Response 409 (application/json)
+    {
+        "status": "CONFLICT",
+        "message": "Admin username conflict.",
+        "data": {}
+    }
+
+* Response 500 (application/json)
+    {
+        "status": "UNKNOWN_ERROR",
+        "message": "Something wrong.",
+        "data": {}
+    }
+
+## User Session [/api/session/user]
+
+### User Login [POST]
 
 * Request (application/json)
     {
@@ -123,7 +156,7 @@ E-Tickets API 文档
         "data": {}
     }
 
-### Logout [DELETE]
+### User Logout [DELETE]
 
 * Response 200 (application/json)
     {
@@ -131,4 +164,62 @@ E-Tickets API 文档
         "message": "Log out successfully.",
         "data": {}
     }
+
+* Response 401 (application/json)
+    {
+		"status": "UNAUTHORIZED",
+		"message": "You have not logged in.",
+		"data": {}
+	}
+
+## Admin Session [/api/session/admin]
+
+### Admin Login [POST]
+
+* Request (application/json)
+    {
+        "username": "admin",
+        "password": "admin"
+    }
+
+* Response 200 (application/json)
+    {
+        "status": "OK",
+        "message": "Admin confirm.",
+        "data": {
+            "username": "admin"
+        }
+    }
+
+* Response 404 (application/json)
+    {
+        "status": "NOT_FOUND",
+        "message": "Admin does not exit.",
+        "data": {}
+    }
+
+* Response 403 (application/json)
+    {
+        "status": "FORBIDDEN",
+        "message": "Password wrong.",
+        "data": {}
+    }
+
+### Admin Logout [DELETE]
+
+* Response 200 (application/json)
+    {
+        "status": "OK",
+        "message": "Admin log out successfully.",
+        "data": {}
+    }
+
+* Response 401 (application/json)
+    {
+		"status": "UNAUTHORIZED",
+		"message": "You have not logged in.",
+		"data": {}
+	}
+
+
 

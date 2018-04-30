@@ -172,6 +172,31 @@ E-Tickets API 文档
 		"data": {}
 	}
 
+## User Avatar Upload[/api/user/avatar/$username]
+
+### Upload and get addr (不会更新User数据，只拿到图片地址) [POST]
+
+* Request (multipart/form-data)
+    Content-Disposition: form-data; name="avatar"; filename="xxx.png"
+
+* Response 200 (application/json)
+    {
+        "status": "OK",
+        "message": "Upload successfully.",
+        "data": {
+		    "avatar": "/images/avatar/avatarxxxx.png"
+		}
+    }
+
+* Response 401 (application/json)
+    {
+	    "status": "UNAUTHORIZED",
+        "message": "Permission denied. Please login.",
+        "data": {}
+	}
+
+
+
 ## Admin Session [/api/session/admin]
 
 ### Admin Login [POST]
@@ -221,5 +246,243 @@ E-Tickets API 文档
 		"data": {}
 	}
 
+## Movie [/api/movie]
 
+### Create a movie [POST]
+
+* Request (application/json)
+    {
+	    "movie_title":"The Dark Knight",
+	    "poster":"/images/poster/the-dark-knight.png",
+	    "director":"Christopher Nolan",
+	    "actors":["Christian Bale","Heath Ledger","Aaron Eckhart"],
+	    "tags":["Crime","DC"]
+	}
+
+* Response 200 (application/json)
+    {
+        "status": "OK",
+        "message": "Create movie successfully.",
+        "data": {
+		    "movie_title":"The Dark Knight",
+	        "poster":"/images/poster/the-dark-knight.png",
+	        "director":"Christopher Nolan",
+	        "actors":["Christian Bale","Heath Ledger","Aaron Eckhart"],
+	        "tags":["Crime","DC"]
+		}
+	}
+
+* Response 401 (application/json)
+    {
+	    "status": "UNAUTHORIZED",
+        "message": "Permission denied. You are not admin,
+        "data": {}
+	}
+
+* Response 500 (application/json)
+    {
+		"status" = "INTERNAL_ERROR";
+        "message" = "Cannot create this movie.";
+        "data" = {};
+	}
+
+## Movie Poster Upload [/api/movie/poster]
+
+### Upload and get addr (不会更新Movie数据，只拿到图片地址) [POST]
+
+* Request (multipart/form-data)
+    Content-Disposition: form-data; name="poster"; filename="xxx.png"
+
+* Response 200 (application/json)
+    {
+        "status": "OK",
+        "message": "Upload successfully.",
+        "data": {
+		    "poster": "/images/poster/posterxxxx.png"
+		}
+    }
+
+* Response 401 (application/json)
+    {
+	    "status": "UNAUTHORIZED",
+        "message": "Permission denied. Please login as admin.",
+        "data": {}
+	}
+
+
+
+## Movies include key_word [/api/movies/$key_word]
+
+### Search movies by key words [GET]
+
+* Response 200 (application/json)
+    {
+    	"status": "OK",
+        "message": "Find movies.",
+        "data": {
+            "movies": [
+                {
+                    "title": "The Dark Knight",
+                    "poster": "/images/poster/the-dark-knight.png",
+                    "director": "Christopher Nolan",
+                    "actors": [
+                        "Christian Bale",
+                        "Heath Ledger",
+                        "Aaron Eckhart"
+                    ],
+                    "tags": [
+                        "Crime",
+                        "DC"
+                    ]
+                }
+            ]
+        }
+	}
+
+* Response 404 (application/json)
+    {
+	    "status": "NOT_FOUND",
+		"message": "Cannot find any movie.",
+		"data": {}
+	}
+
+## Movies with key_word title [/api/movies/title/$key_word]
+
+### Search movies by title [GET]
+
+* Response 200 (application/json)
+    {
+    	"status": "OK",
+        "message": "Find movies. Search by title",
+        "data": {
+            "movies": [
+                {
+                    "title": "The Dark Knight",
+                    "poster": "/images/poster/the-dark-knight.png",
+                    "director": "Christopher Nolan",
+                    "actors": [
+                        "Christian Bale",
+                        "Heath Ledger",
+                        "Aaron Eckhart"
+                    ],
+                    "tags": [
+                        "Crime",
+                        "DC"
+                    ]
+                }
+            ]
+        }
+	}
+
+* Response 404 (application/json)
+    {
+	    "status": "NOT_FOUND",
+		"message": "Cannot find any movie.",
+		"data": {}
+	}
+
+## Movies directed by key_word director [/api/movies/director/$key_word]
+
+### Search movies by director [GET]
+
+* Response 200 (application/json)
+    {
+    	"status": "OK",
+        "message": "Find movies. Search by director",
+        "data": {
+            "movies": [
+                {
+                    "title": "The Dark Knight",
+                    "poster": "/images/poster/the-dark-knight.png",
+                    "director": "Christopher Nolan",
+                    "actors": [
+                        "Christian Bale",
+                        "Heath Ledger",
+                        "Aaron Eckhart"
+                    ],
+                    "tags": [
+                        "Crime",
+                        "DC"
+                    ]
+                }
+            ]
+        }
+	}
+
+* Response 404 (application/json)
+    {
+	    "status": "NOT_FOUND",
+		"message": "Cannot find any movie.",
+		"data": {}
+	}
+
+## Movies acted by key_word actor [/api/movies/actor/$key_word]
+
+### Search movies by actor [GET]
+
+* Response 200 (application/json)
+    {
+    	"status": "OK",
+        "message": "Find movies. Search by actor",
+        "data": {
+            "movies": [
+                {
+                    "title": "The Dark Knight",
+                    "poster": "/images/poster/the-dark-knight.png",
+                    "director": "Christopher Nolan",
+                    "actors": [
+                        "Christian Bale",
+                        "Heath Ledger",
+                        "Aaron Eckhart"
+                    ],
+                    "tags": [
+                        "Crime",
+                        "DC"
+                    ]
+                }
+            ]
+        }
+	}
+
+* Response 404 (application/json)
+    {
+	    "status": "NOT_FOUND",
+		"message": "Cannot find any movie.",
+		"data": {}
+	}
+
+## Movies with key_word tag [/api/movies/tag/$key_word]
+
+### Search movies by tag [GET]
+
+* Response 200 (application/json)
+    {
+    	"status": "OK",
+        "message": "Find movies. Search by tag",
+        "data": {
+            "movies": [
+                {
+                    "title": "The Dark Knight",
+                    "poster": "/images/poster/the-dark-knight.png",
+                    "director": "Christopher Nolan",
+                    "actors": [
+                        "Christian Bale",
+                        "Heath Ledger",
+                        "Aaron Eckhart"
+                    ],
+                    "tags": [
+                        "Crime",
+                        "DC"
+                    ]
+                }
+            ]
+        }
+	}
+
+* Response 404 (application/json)
+    {
+	    "status": "NOT_FOUND",
+		"message": "Cannot find any movie.",
+		"data": {}
+	}
 

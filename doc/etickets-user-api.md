@@ -201,6 +201,13 @@ Admin, Cinema Owner 的 API 见其它文档。
 		}
 	}
 
+* Response 404 (application/json)
+
+    {
+	    "status": "NOT_FOUND",
+		"message": "Cannot find any movie.",
+		"data": {}
+	}
 
 ## Movies - by keyword [/api/movies/$key_word]
 

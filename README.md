@@ -31,8 +31,8 @@ E-Tickets 项目主页
 * X2 Tech/Work Report
   * [15331053-Jason: ]()
   * [15331054-Qubic: Git 使用手册](https://qyb225.github.io/git/branch)
-  * [15331057-Snap: ]()
-** XX 建模练习
+  * [15331057-Snap: ES6 基础学习](https://weirdsnap.github.io/htmls/blogs/007.html)
+* XX 建模练习
   * [淘票票 APP 建模文档](doc/XX/taopiaopiaodoc.md)
   * 建模者答案与评价
 

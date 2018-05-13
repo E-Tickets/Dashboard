@@ -27,14 +27,11 @@ E-Tickets 项目主页
   * 8.2 REST API 设计规范
 * X1 meeting_recording
   * [inception meeting](doc/X1_meeting/inception.md)
-  * [Iteration 1 meeting (2018/04/01)](doc/X1_meeting/iterator_1.md)
+  * [Iteration 1](doc/X1_meeting/iteration_1.md)
 * X2 Tech/Work Report
   * [15331053-Jason: ]()
   * [15331054-Qubic: Git 使用手册](https://qyb225.github.io/git/branch)
   * [15331057-Snap: ]()
-
-
-
 
 
 

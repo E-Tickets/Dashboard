@@ -349,7 +349,7 @@ Admin, User 的 API 见其它文档。
     }
 
 
-## Cinemas - CinemaName [/api/cinemas/cinemaname/$cinema_name]
+## Cinemas - CinemaName [/api/cinemas/cinema-name/$cinema_name]
 
 ### 某名字的所有影院 [GET]
 

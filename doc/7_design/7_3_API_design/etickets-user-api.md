@@ -560,7 +560,7 @@ Admin, Cinema Owner 的 API 见其它文档。
 	}
 
 
-## Cinemas - CinemaName [/api/cinemas/cinemaname/$cinema_name]
+## Cinemas - CinemaName [/api/cinemas/cinema-name/$cinema_name]
 
 ### 某名字的所有影院 [GET]
 
@@ -871,7 +871,7 @@ Admin, Cinema Owner 的 API 见其它文档。
 	}
 
 
-## Paid Orders [/api/orders/$username/paidorders]
+## Paid Orders [/api/orders/$username/paid-orders]
 
 ### 用户所有支付订单 [GET]
 
@@ -916,7 +916,7 @@ Admin, Cinema Owner 的 API 见其它文档。
 	}
 
 
-## Unpaid Orders [/api/orders/$username/unpaidorders]
+## Unpaid Orders [/api/orders/$username/unpaid-orders]
 
 ### 用户所有未支付订单 [GET]
 
@@ -959,3 +959,387 @@ Admin, Cinema Owner 的 API 见其它文档。
 		"message": "Cannot find any unpaid order.",
 		"data": {}
 	}
+
+
+## Comment [/api/comment]
+
+### 发布评论 [POST]
+
+* Request (application/json)
+
+    {
+        "username": "qyb225",
+        "movie_id": 8,
+        "is_recommended": true,
+        "comment_content": "这部电影真好看，墙裂推荐",
+        "is_spoiled": false
+    }
+
+* Response 200 (application/json)
+
+    {
+        "status": "OK",
+        "message": "Comment created!",
+        "data": {
+            "comment_id": 4,
+            "username": "qyb225",
+            "movie_id": 8,
+            "is_recommended": true,
+            "comment_content": "这部电影真好看，墙裂推荐",
+            "is_spoiled": false
+        }
+    }
+
+* Response 400 (application/json)
+
+    {
+        "status": "BAD_REQUEST",
+        "message": "Movie is not exists.",
+        "data": {}
+    }
+
+* Response 401 (application/json)
+
+    {
+        "status": "UNAUTHORIZED",
+        "message": "Permission denied.",
+        "data": {}
+    }
+
+* Response 409 (application/json)
+
+    {
+        "status": "CONFLICT",
+        "message": "You have made a comment.",
+        "data": {}
+    }
+
+* Response 500 (applicaton/json)
+
+	{
+        "status": "UNKNOWN_ERROR",
+        "message": "Something wrong.",
+        "data": {}
+    }
+
+### 删除评论 [DELETE]
+
+* Request (application/json)
+
+    {
+        "username": "qyb225",
+        "movie_id": 8,
+    }
+
+* Response 200 (applicaton/json)
+
+    {
+        "status": "OK",
+        "message": "Delete this comment successfully.",
+        "data": {}
+    }
+
+* Response 401 (application/json)
+
+    {
+        "status": "UNAUTHORIZED",
+        "message": "Permission denied.",
+        "data": {}
+    }
+
+## Movie's All Comments [/api/comments/all-comments/movieid/$movie_id]
+
+### 一部电影的全部评论 [GET]
+
+* Response 200 (application/json)
+
+    {
+        "status": "OK",
+        "message": "All comments.",
+        "data": [
+            {
+                "comment_id": 11,
+                "username": "qyb225",
+                "movie_id": 9,
+                "is_recommended": 1,
+                "comment_content": "超级好看，墙裂推荐！",
+                "is_spoiled": 0,
+                "time": "2018-05-26 20:39:19"
+            },
+            {
+                "comment_id": 10,
+                "username": "user2",
+                "movie_id": 9,
+                "is_recommended": 0,
+                "comment_content": "我觉得这个电影一般吧",
+                "is_spoiled": 0,
+                "time": "2018-05-26 20:33:38"
+            },
+            {
+                "comment_id": 9,
+                "username": "user1",
+                "movie_id": 9,
+                "is_recommended": 1,
+                "comment_content": "主角死了，死得好惨",
+                "is_spoiled": 1,
+                "time": "2018-05-26 20:32:49"
+            }
+        ]
+    }
+
+* Response 404 (application/json)
+
+    {
+        "status": "NOT_FOUND",
+        "message": "Cannot find any comment.",
+        "data": {}
+    }
+
+## Amount of movie's comments [/api/comments/all-comments/movieid/$movie_id/amount]
+
+### 一部电影的全部评论数量 [GET]
+
+* Response 200 (application/json)
+
+    {
+        "status": "OK",
+        "message": "Amount of comments.",
+        "data": {
+            "amount": 3
+        }
+    }
+
+## One Page of Movie's All Comments [/api/comments/all-comments/movieid/$movie_id/page/$page_id/page-amount/$max_page_item_amount]
+
+
+### 获取电影全部评论中的一页 [GET]
+
+* Response 200 (application/json)
+
+    {
+        "status": "OK",
+        "message": "All comments.",
+        "data": [
+            {
+                "comment_id": 11,
+                "username": "qyb225",
+                "movie_id": 9,
+                "is_recommended": 1,
+                "comment_content": "超级好看，墙裂推荐！",
+                "is_spoiled": 0,
+                "time": "2018-05-26 20:39:19"
+            },
+            {
+                "comment_id": 10,
+                "username": "user2",
+                "movie_id": 9,
+                "is_recommended": 0,
+                "comment_content": "我觉得这个电影一般吧",
+                "is_spoiled": 0,
+                "time": "2018-05-26 20:33:38"
+            },
+            {
+                "comment_id": 9,
+                "username": "user1",
+                "movie_id": 9,
+                "is_recommended": 1,
+                "comment_content": "主角死了，死得好惨",
+                "is_spoiled": 1,
+                "time": "2018-05-26 20:32:49"
+            }
+        ]
+    }
+
+* Response 404 (application/json)
+
+    {
+        "status": "NOT_FOUND",
+        "message": "Cannot find any comment.",
+        "data": {}
+    }
+
+## Movie's Unspoiled Comments [/api/comments/unspoiled-comments/movieid/$movie_id]
+
+### 一部电影的非剧透评论 [GET]
+
+* Response 200 (applicaton/json)
+
+    {
+        "status": "OK",
+        "message": "Unspoiled comments.",
+        "data": [
+            {
+                "comment_id": 11,
+                "username": "qyb225",
+                "movie_id": 9,
+                "is_recommended": 1,
+                "comment_content": "超级好看，墙裂推荐！",
+                "is_spoiled": 0,
+                "time": "2018-05-26 20:39:19"
+            },
+            {
+                "comment_id": 10,
+                "username": "user2",
+                "movie_id": 9,
+                "is_recommended": 0,
+                "comment_content": "我觉得这个电影一般吧",
+                "is_spoiled": 0,
+                "time": "2018-05-26 20:33:38"
+            }
+        ]
+    }
+
+* Response 404 (application/json)
+
+    {
+        "status": "NOT_FOUND",
+        "message": "Cannot find any comment.",
+        "data": {}
+    }
+
+
+## Amount of movie's unspoiled comments [/api/comments/unspoiled-comments/movieid/$movie_id/amount]
+
+### 一部电影的非剧透评论数量 [GET]
+
+* Response 200 (applicaiton/json)
+
+    {
+        "status": "OK",
+        "message": "Amount of unspoiled comments.",
+        "data": {
+            "amount": 2
+        }
+    }
+
+## One Page of Movie's Unspoiled Comments [/api/comments/unspoiled-comments/movieid/$movie_id/page/$page_id/page-amount/$max_page_item_amount]
+
+### 获取电影非剧透评论中的一页 [GET]
+
+* Response 200 (application/json)
+
+    {
+        "status": "OK",
+        "message": "Unspoiled comments.",
+        "data": [
+            {
+                "comment_id": 10,
+                "username": "user2",
+                "movie_id": 9,
+                "is_recommended": 0,
+                "comment_content": "我觉得这个电影一般吧",
+                "is_spoiled": 0,
+                "time": "2018-05-26 20:33:38"
+            },
+            {
+                "comment_id": 11,
+                "username": "qyb225",
+                "movie_id": 9,
+                "is_recommended": 1,
+                "comment_content": "超级好看，墙裂推荐！",
+                "is_spoiled": 0,
+                "time": "2018-05-26 20:39:19"
+            }
+        ]
+    }
+
+* Response 404 (application/json)
+
+    {
+        "status": "NOT_FOUND",
+        "message": "Cannot find any comment.",
+        "data": {}
+    }
+
+## User's comments [/api/comments/user/$username]
+
+### 某用户发布的所有评论 [GET]
+
+* Response 200 (application/json)
+
+    {
+        "status": "OK",
+        "message": "Get user comments.",
+        "data": [
+            {
+                "comment_id": 11,
+                "username": "qyb225",
+                "movie_id": 9,
+                "is_recommended": 1,
+                "comment_content": "超级好看，墙裂推荐！",
+                "is_spoiled": 0,
+                "time": "2018-05-26 20:39:19"
+            },
+            {
+                "comment_id": 1,
+                "username": "qyb225",
+                "movie_id": 8,
+                "is_recommended": 1,
+                "comment_content": "这部电影真好看，墙裂推荐",
+                "is_spoiled": 0,
+                "time": "2018-05-26 19:17:54"
+            }
+        ]
+    }
+
+* Response 404 (application/json)
+
+    {
+        "status": "NOT_FOUND",
+        "message": "Cannot find any comment.",
+        "data": {}
+    }
+
+
+## Amount of user's comments [/api/comments/user/$username/amount]
+
+### 某用户发布的评论数量 [GET]
+
+* Response 200 (applicaiton/json)
+
+    {
+        "status": "OK",
+        "message": "Amount of comments.",
+        "data": {
+            "amount": 2
+        }
+    }
+
+## One Page of User's Comments [/api/comments/user/$username/page/$page_id/page-amount/$max_page_item_amount]
+
+### 获取某用户评论中的一页 [GET]
+
+* Response 200 (application/json)
+
+    {
+        "status": "OK",
+        "message": "Get user comments.",
+        "data": [
+            {
+                "comment_id": 11,
+                "username": "qyb225",
+                "movie_id": 9,
+                "is_recommended": 1,
+                "comment_content": "超级好看，墙裂推荐！",
+                "is_spoiled": 0,
+                "time": "2018-05-26 20:39:19"
+            },
+            {
+                "comment_id": 1,
+                "username": "qyb225",
+                "movie_id": 8,
+                "is_recommended": 1,
+                "comment_content": "这部电影真好看，墙裂推荐",
+                "is_spoiled": 0,
+                "time": "2018-05-26 19:17:54"
+            }
+        ]
+    }
+
+* Response 404 (application/json)
+
+    {
+        "status": "NOT_FOUND",
+        "message": "Cannot find any comment.",
+        "data": {}
+    }

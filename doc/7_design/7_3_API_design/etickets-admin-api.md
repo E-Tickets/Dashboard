@@ -6,7 +6,7 @@ E-Tickets-Owner API 文档（伟大的系统管理员 —— 我，专用）
 
 Owner, User 的 API 见其它文档。
 
-## Session [/api/session/owner]
+## Session [/api/session/admin]
 
 ### 登录 [POST]
 

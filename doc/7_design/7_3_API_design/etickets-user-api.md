@@ -212,7 +212,7 @@ Admin, Cinema Owner 的 API 见其它文档。
 
 ## Movies - by status [/api/movies/status/$status_id]
 
-status_id: 0 表示未上映, 1 表示正在热映, 2 表示下映
+### 通过电影未上映、热映中、下映检索电影 [GET]
 
 * Response 200 (application/json)
 

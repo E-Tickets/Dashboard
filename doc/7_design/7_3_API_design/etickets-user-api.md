@@ -187,6 +187,7 @@ Admin, Cinema Owner 的 API 见其它文档。
 	    "status": "OK",
         "message": "Find movies.",
 		"data": {
+    		"movie_id": 7,
 			"title": "The Dark Knight",
 			"poster": "/images/poster/the-dark-knight.png",
 			"director": "Christopher Nolan",
@@ -209,6 +210,47 @@ Admin, Cinema Owner 的 API 见其它文档。
 		"data": {}
 	}
 
+## Movies - by status [/api/movies/status/$status_id]
+
+status_id: 0 表示未上映, 1 表示正在热映, 2 表示下映
+
+* Response 200 (application/json)
+
+	{
+    	"status": "OK",
+        "message": "Find movies.",
+        "data": {
+            "movies": [
+                {
+                	"movie_id": 7,
+                    "title": "The Dark Knight",
+                    "poster": "/images/poster/the-dark-knight.png",
+                    "director": "Christopher Nolan",
+                    "actors": [
+                        "Christian Bale",
+                        "Heath Ledger",
+                        "Aaron Eckhart"
+                    ],
+                    "tags": [
+                        "Crime",
+                        "DC"
+                    ]
+                },
+                {
+                	//...
+                }
+            ]
+        }
+	}
+
+* Response 404 (application/json)
+
+    {
+	    "status": "NOT_FOUND",
+		"message": "Cannot find any movie.",
+		"data": {}
+	}
+
 ## Movies - by keyword [/api/movies/$key_word]
 
 ### 根据key检索电影 [GET]
@@ -221,6 +263,7 @@ Admin, Cinema Owner 的 API 见其它文档。
         "data": {
             "movies": [
                 {
+                	"movie_id": 7,
                     "title": "The Dark Knight",
                     "poster": "/images/poster/the-dark-knight.png",
                     "director": "Christopher Nolan",
@@ -258,6 +301,7 @@ Admin, Cinema Owner 的 API 见其它文档。
         "data": {
             "movies": [
                 {
+                	"movie_id": 7,
                     "title": "The Dark Knight",
                     "poster": "/images/poster/the-dark-knight.png",
                     "director": "Christopher Nolan",
@@ -295,6 +339,7 @@ Admin, Cinema Owner 的 API 见其它文档。
         "data": {
             "movies": [
                 {
+                	"movie_id": 7,
                     "title": "The Dark Knight",
                     "poster": "/images/poster/the-dark-knight.png",
                     "director": "Christopher Nolan",
@@ -332,6 +377,7 @@ Admin, Cinema Owner 的 API 见其它文档。
         "data": {
             "movies": [
                 {
+                	"movie_id": 7,
                     "title": "The Dark Knight",
                     "poster": "/images/poster/the-dark-knight.png",
                     "director": "Christopher Nolan",
@@ -369,6 +415,7 @@ Admin, Cinema Owner 的 API 见其它文档。
         "data": {
             "movies": [
                 {
+                	"movie_id": 7,
                     "title": "The Dark Knight",
                     "poster": "/images/poster/the-dark-knight.png",
                     "director": "Christopher Nolan",

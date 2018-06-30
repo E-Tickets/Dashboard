@@ -11,12 +11,14 @@ E-Tickets 项目主页
 * 5、 [Product Backlog （产品特性）](doc/5_product_backlog/product_backlog.md)
 * 6、 Requirement specification（需求规格说明）
   * [6.1 Usecase Diagram（用例图）](doc/6_requirement_spec/Use-case-diagram-v1.0.md)
-  * 6.2 Use Cases（用例+活动图)
-  * 6.3 Domian Model（领域模型）
+  * [6.2 Use Cases（用例)](doc/6_requirement_spec/Use cases.md)
+  * [6.3 Domian Model（领域模型)](doc/6_requirement_spec/Domain Model.md)
   * 6.4 State Model（状态模型）
   * 6.5 System Sequence Diagram（功能模型）
 * 7、 Design（设计）
-  * [7.1 UI design](doc/7_design/7_1_UI_design/产品原型设计说明.md)
+  * 7.1 [UI design](doc/7_design/7_1_UI_design/产品原型设计说明.md)
+    * [登录、注册用例UI设计](doc/7_design/7_1_UI_design/登录、注册用例UI设计.md)
+    * [购票用例UI设计](doc/7_design/7_1_UI_design/购票用例UI设计.md)
   * 7.2 Database design
   * 7.3 API design
     * [7.3.1 User-API](https://e-tickets.github.io/Dashboard/api/api-user.html)

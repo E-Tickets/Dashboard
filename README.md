@@ -13,7 +13,7 @@ E-Tickets 项目主页
   * [6.1 Usecase Diagram(用例图)](doc/6_requirement_spec/Use-case-diagram-v1.0.md)
   * [6.2 Use Cases(用例)](doc/6_requirement_spec/Use-cases.md)
   * [6.3 Domian Model(领域模型)](doc/6_requirement_spec/Domain-Model.md)
-  * 6.4 State Model（状态模型）
+  * [6.4 State Model(状态模型)](doc/6_requirement_spec/state-machine.md)
   * 6.5 System Sequence Diagram（功能模型）
 * 7、 Design（设计）
   * 7.1 [UI design](doc/7_design/7_1_UI_design/产品原型设计说明.md)

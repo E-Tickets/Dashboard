@@ -10,9 +10,9 @@ E-Tickets 项目主页
 * 4、 [Vision（项目愿景）](doc/4_vision/vision.md)
 * 5、 [Product Backlog （产品特性）](doc/5_product_backlog/product_backlog.md)
 * 6、 Requirement specification（需求规格说明）
-  * [6.1 Usecase Diagram（用例图）](doc/6_requirement_spec/Use-case-diagram-v1.0.md)
-  * [6.2 Use Cases（用例)](doc/6_requirement_spec/Use cases.md)
-  * [6.3 Domian Model（领域模型)](doc/6_requirement_spec/Domain Model.md)
+  * [6.1 Usecase Diagram(用例图)](doc/6_requirement_spec/Use-case-diagram-v1.0.md)
+  * [6.2 Use Cases(用例)](doc/6_requirement_spec/Use cases.md)
+  * [6.3 Domian Model(领域模型)](doc/6_requirement_spec/Domain Model.md)
   * 6.4 State Model（状态模型）
   * 6.5 System Sequence Diagram（功能模型）
 * 7、 Design（设计）

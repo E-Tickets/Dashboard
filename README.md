@@ -26,7 +26,7 @@ E-Tickets 项目主页
     * [7.3.3 System-Admin-API](https://e-tickets.github.io/Dashboard/api/api-admin.html)
 * 8、 生产规范与指南
   * [8.1 代码规范](doc/8_guide/code_guide.md)
-  * 8.2 REST API 设计规范
+  * [8.2 REST API 设计规范](doc/8_guide/restful_api.md)
 * X1 meeting_recording
   * [inception meeting](doc/X1_meeting/inception.md)
   * [Iteration 1](doc/X1_meeting/iteration_1.md)

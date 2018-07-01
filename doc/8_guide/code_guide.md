@@ -67,3 +67,13 @@
 ---
 
 ## 二、后端代码规范
+
+后端使用 Node.js，规范如下：
+
+* 缩进使用 4 个空格
+* 用 let, const 代替 var
+* 与数据库、前端交互字段使用下划线命名
+* 其它字段均使用驼峰命名
+* 尽量用 async, await 代替 Promise.then 或 callback
+* 非必须情况下使用箭头函数代替匿名函数
+* 导出统一使用 module.exports

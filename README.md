@@ -36,6 +36,7 @@ E-Tickets 项目主页
   * [15331053-Jason:博客搭建 ](https://jasoncheng40.github.io/web/2018/03/11/%E5%A6%82%E4%BD%95%E7%94%A8jekyll%E6%90%AD%E5%BB%BAGithub-Page(1).html)
   * [15331054-Qubic: Git 使用手册](https://qyb225.github.io/git/branch)
   * [15331057-Snap: ES6 基础学习](https://weirdsnap.github.io/htmls/blogs/007.html)
+  * [15331054-Qubic: MySQL 索引优化](https://qyb225.github.io/mysql/index)
 * X3 Final Report
   * [15331053-Jason](doc/X3_final_report/15331053_总结报告.md)
   * [15331054-Qubic](doc/X3_final_report/15331054_总结报告.md)

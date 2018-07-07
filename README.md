@@ -37,6 +37,7 @@ E-Tickets 项目主页
   * [15331054-Qubic: Git 使用手册](https://qyb225.github.io/git/branch)
   * [15331057-Snap: ES6 基础学习](https://weirdsnap.github.io/htmls/blogs/007.html)
   * [15331054-Qubic: MySQL 索引优化](https://qyb225.github.io/mysql/index)
+  * [15331054-Qubic: 服务器高并发：事件驱动](https://qyb225.github.io/server-tech/event-drive)
 * X3 Final Report
   * [15331053-Jason](doc/X3_final_report/15331053_总结报告.md)
   * [15331054-Qubic](doc/X3_final_report/15331054_总结报告.md)

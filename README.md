@@ -4,6 +4,12 @@ E-Tickets 项目主页
 
 ## About Project
 
+* 0、SDP
+  * [0.1 用户手册](doc/9_SDP/用户手册.md)
+  * [0.2 安装部署说明](doc/9_SDP/软件部署说明.md)
+  * [0.3 软件需求规格说明书(SRS)](doc/9_SDP/软件需求规格说明书.md)
+  * [0.4 软件设计文档(SDS)](doc/9_SDP/软件设计文档.md)
+  * [0.5 小组分工与贡献率说明](doc/9_SDP/小组分工与贡献率说明.md)
 * 1、 About（项目规划）
 * 2、 [Team profile（团队组建）](doc/2_team/team.md)
 * 3、 [Investigation（项目前期调研）](doc/3_investigation/Investigation.md)
